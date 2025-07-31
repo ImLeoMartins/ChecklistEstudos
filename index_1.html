@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Estudos - Auxiliar de Escritório</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="main-title">
+                <i class="fas fa-graduation-cap"></i>
+                Plano de Estudos - Auxiliar de Escritório
+            </h1>
+        </header>
+
+        <!-- Progress Section -->
+        <section class="progress-section">
+            <div class="progress-container">
+                <div class="progress-ring-container">
+                    <svg class="progress-ring" width="120" height="120">
+                        <defs>
+                            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#bb86fc;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#6200ea;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="progress-ring-bg" cx="60" cy="60" r="50" stroke="#2a2a2a" stroke-width="8" fill="none"/>
+                        <circle class="progress-ring-fill" cx="60" cy="60" r="50" stroke="url(#progressGradient)" stroke-width="8" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <div class="progress-text">
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                </div>
+                <div class="progress-info">
+                    <div class="progress-counter">
+                        <span class="completed-count">0</span>/<span class="total-count">0</span> atividades completas
+                    </div>
+                    <button class="reset-btn" id="resetBtn">
+                        <i class="fas fa-redo"></i>
+                        Reiniciar Progresso
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Sections -->
+        <main class="study-sections" id="studySections">
+            <!-- Sections will be dynamically generated -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="current-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span id="currentDate"></span>
+                </div>
+                <div class="footer-actions">
+                    <button class="share-btn" title="Compartilhar">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="export-btn" id="exportBtn" title="Exportar Progresso">
+                        <i class="fas fa-download"></i>
+                        Exportar
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <h3>Confirmar Ação</h3>
+            <p>Tem certeza que deseja reiniciar todo o progresso? Esta ação não pode ser desfeita.</p>
+            <div class="modal-actions">
+                <button class="btn-cancel" id="cancelBtn">Cancelar</button>
+                <button class="btn-confirm" id="confirmBtn">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
